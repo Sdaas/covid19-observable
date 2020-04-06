@@ -1,0 +1,14 @@
+{
+  "name": "@sdaas/covid19",
+  "main": "f7e476b75218e889@408.js",
+  "version": "408.0.0",
+  "homepage": "https://observablehq.com/@sdaas/covid19",
+  "author": {
+    "name": "Soumendra Daas",
+    "url": "https://observablehq.com/@sdaas"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4"
+  }
+}
