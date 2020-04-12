@@ -1,14 +1,33 @@
-# covid19-observable
- Viewing the COVID19 for India using ObservableHQ.com
+# covid19
 
-## Introduction
+https://observablehq.com/@sdaas/covid19@576
 
-An [Observable]() notebook to view COVID19 data. The notebook can be viewed online 
-at [https://observablehq.com/@sdaas/covid19](https://observablehq.com/@sdaas/covid19).
+View this notebook in your browser by running a web server in this folder. For
+example:
 
-The APIs provided by [Covid19india.org](https://www.covid19india.org/) at [https://github.com/covid19india/api](https://github.com/covid19india/api) provide the data for this notebook.
+~~~sh
+python -m SimpleHTTPServer
+~~~
 
-## References
+Or, use the [Observable Runtime](https://github.com/observablehq/runtime) to
+import this module directly into your application. To npm install:
 
-* [ObservableHQ.com](https://www.observablehq.com)
-* [Markdown syntax](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+~~~sh
+npm install @observablehq/runtime@4
+npm install https://api.observablehq.com/d/f7e476b75218e889.tgz?v=3
+~~~
+
+Then, import your notebook and the runtime as:
+
+~~~js
+import {Runtime, Inspector} from "@observablehq/runtime";
+import define from "@sdaas/covid19";
+~~~
+
+To log the value of the cell named “foo”:
+
+~~~js
+const runtime = new Runtime();
+const main = runtime.module(define);
+main.value("foo").then(value => console.log(value));
+~~~
